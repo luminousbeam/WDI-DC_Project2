@@ -833,14 +833,15 @@ var me = document.getElementById('animated-site-logo-dot-link');
 
               <!-- Begin article/image nav example code. Replace these examples with a loop over the first three article database items -->
 
-              <% @articles.each do |article| %> <!--!use this for first three-->
-
+              <% @articles[0..2].each do |article| %> <!--!use this for first three-->
 
               <li class= "hfwmm-item hfwmm-secondary-item hfwmm-item-2 money-theme-bg hfwmm-first-secondary-item hfwmm-4uphp-secondary-item">
               <a class="hfwmm-list-link hfwmm-light-list-link hfwmm-image-link hfwmm-secondary-link"
                 data-ht="flex4uphpherostack1"
                 data-track-display-type="thumb"
-                href= "<%= article.link %>">
+                href= "<%= article.link %>"><%= article.title %>
+
+
               <span class="hfwmm-image-gradient hfwmm-secondary-image-gradient"></span>
               <span class="theme-bg-ssts-label hfwmm-ssts-label-top-left hfwmm-ssts-label-secondary money-theme-bg">
                 Green Category
@@ -852,7 +853,7 @@ var me = document.getElementById('animated-site-logo-dot-link');
                 <span class="hfwmm-secondary-text-hed-icon"></span>
                 <span class="hfwmm-list-hed hfwmm-secondary-hed"
                   title="This is an example article with image. It links to ex1.htm">
-                  <%= article.title %>
+
                 </span>
               </span>
               </a>
@@ -860,75 +861,20 @@ var me = document.getElementById('animated-site-logo-dot-link');
               <% end %>
 
 
-
+              <% @articles[3..14].each do |article| %>
               <!-- Begin article without image nav example code. Replace these examples with a loop over the next nine article database items -->
               <li class="hfwmm-item hfwmm-tertiary-item hfwmm-item-5 news-theme-bg hfwmm-first-tertiary-item hfwmm-4uphp-tertiary-item">
               <a class="hfwmm-list-link hfwmm-light-list-link hfwmm-tertiary-link"
                 data-ht="flex4uphpherostack4"
                 data-track-display-type="stack"
-                href="ex4.html">
-                <span class="hfwmm-list-hed hfwmm-tertiary-hed"
-                title="This is an article link with no image">This is a less exciting article link</span></a>
+                href="<%= article.link %>">
+                <%= article.title %></span></a>
               </li>
-
-
-#loop here
-              <li class="hfwmm-item hfwmm-tertiary-item hfwmm-item-6 money-theme-bg hfwmm-4uphp-tertiary-item">
-              <a class="hfwmm-list-link hfwmm-light-list-link hfwmm-tertiary-link"
-                data-ht="flex4uphpherostack4"
-                data-track-display-type="stack"
-                href="ex4.html">
-                <span class="hfwmm-list-hed hfwmm-tertiary-hed"
-                title="This is an article link with no image">See line 900 for template code for these lis</span></a>
-              </li>
-
-              <li class="hfwmm-item hfwmm-tertiary-item hfwmm-item-6 money-theme-bg hfwmm-4uphp-tertiary-item">
-              <a class="hfwmm-list-link hfwmm-light-list-link hfwmm-tertiary-link"
-                data-ht="flex4uphpherostack4"
-                data-track-display-type="stack"
-                href="ex4.html">
-                <span class="hfwmm-list-hed hfwmm-tertiary-hed"
-                title="This is an article link with no image">First article (@articles.first) here must use special class</span></a>
-              </li>
-
-              <li class="hfwmm-item hfwmm-tertiary-item hfwmm-item-6 money-theme-bg hfwmm-4uphp-tertiary-item">
-              <a class="hfwmm-list-link hfwmm-light-list-link hfwmm-tertiary-link"
-                data-ht="flex4uphpherostack4"
-                data-track-display-type="stack"
-                href="ex4.html">
-                <span class="hfwmm-list-hed hfwmm-tertiary-hed"
-                title="This is an article link with no image">Otherwise the list won't display properly</span></a>
-              </li>
-
-              <li class="hfwmm-item hfwmm-tertiary-item hfwmm-item-6 money-theme-bg hfwmm-4uphp-tertiary-item">
-              <a class="hfwmm-list-link hfwmm-light-list-link hfwmm-tertiary-link"
-                data-ht="flex4uphpherostack4"
-                data-track-display-type="stack"
-                href="ex4.html">
-                <span class="hfwmm-list-hed hfwmm-tertiary-hed"
-                title="This is an article link with no image">The next 8 articles should be looped in using the template on line 910</span></a>
-              </li>
-
-              <li class="hfwmm-item hfwmm-tertiary-item hfwmm-item-6 money-theme-bg hfwmm-4uphp-tertiary-item">
-              <a class="hfwmm-list-link hfwmm-light-list-link hfwmm-tertiary-link"
-                data-ht="flex4uphpherostack4"
-                data-track-display-type="stack"
-                href="ex4.html">
-                <span class="hfwmm-list-hed hfwmm-tertiary-hed"
-                title="This is an article link with no image">...(i.e. @articles[1:].each do</span></a>
-              </li>
-
-              <li class="hfwmm-item hfwmm-tertiary-item hfwmm-item-6 money-theme-bg hfwmm-4uphp-tertiary-item">
-              <a class="hfwmm-list-link hfwmm-light-list-link hfwmm-tertiary-link"
-                data-ht="flex4uphpherostack4"
-                data-track-display-type="stack"
-                href="ex4.html">
-                <span class="hfwmm-list-hed hfwmm-tertiary-hed"
-                title="This is an article link with no image">This area will hold 9 items, but can be less</span></a>
-              </li>
+              <% end %>
 
             </ul>
           </section>
+
 
           <div class="card-full-width card-primary-sidebar-modules" id=
           "card_full_width_main">
